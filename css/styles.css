@@ -1,7 +1,7 @@
- *{ 
-       -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-       -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-       box-sizing: border-box;         /* Opera/IE 8+ */
+*{ 
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
 body,a, h1, ul,li{
@@ -22,7 +22,7 @@ body{
 	margin:0 auto;
 }
 
-#header{
+#header, #footer{
 	color: #EFEFEF;
 	width:100%;
 	padding:20px;
@@ -73,17 +73,32 @@ body{
 #routine{
 	position:relative;
 	letter-spacing:1px;
-	background:#ccc;
+	margin:20px 0;
+}
+
+.routine-item{
+	background:#dfdfdf;
 	overflow:hidden;
+	color:#333;
+	margin:5px 0;
+	box-shadow:1px 1px 2px -1px #666;
+	border-radius:5px;
+	text-align:center;
 }
 
 	.time{
 		width:40%;
 		float:left;
-		padding:20px;
+		padding:10px;
+		border-right:1px solid #333;
 	}
 
 	.subject{
 		float:left;
-		padding:20px;
+		padding:10px;
+		boder-left:1px solid #f00;
 	}
+	
+#footer{
+	border-radius:5px 5px 0 0;
+}
