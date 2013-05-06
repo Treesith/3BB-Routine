@@ -1,0 +1,65 @@
+ *{ 
+       -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+       -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+       box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+body,a, h1, ul,li{
+	margin:0;
+	padding:0;
+	border:0;
+}
+
+body{
+	font-family:Arial, Helvetica;
+	background:#e5e5e5;
+}
+
+#wrapper{
+	width:960px;
+	max-width:100%;
+	margin:0 auto;
+}
+
+#header{
+	width:100%;
+}
+
+#days{
+	overflow:hidden;
+	margin:20px 0;
+}
+
+.days-item{
+	width:16.66%;
+	float:left;
+	list-style:none;
+}
+
+#remaining-time{
+	color:#fff;
+	background:#ccc;
+	position:relative;
+}
+
+#routine{
+	position:relative;
+}
+
+.time{
+	width:25%;
+	float:left;
+	padding:20px;
+}
+
+.subject{
+	float:left;
+	padding:20px;
+}
+
+
+
+	
+	
+	
+	
