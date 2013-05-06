@@ -10,6 +10,12 @@ body,a, h1, ul,li{
 	border:0;
 }
 
+a, a:visited{
+	text-decoration:none;
+	color:#333;
+}
+
+
 body{
 	font-family:Lato ,Arial, Helvetica;
 	background:url(../images/bg.png) #e5e5e5;
@@ -49,25 +55,27 @@ body{
 	box-shadow:1px 2px 3px -1px #666;
 }
 
-
-
 	.days-item{
-		width:16.66%;
+		width:20%;
 		float:left;
 		list-style:none;
 		color:#333;
-		border-left:1px solid #666;
-		border-right:1px solid #efefef ;
+		border-left:1px solid #999;
+		border-right:1px solid #eee;
 		padding: 20px;
 		text-align: center;
 	}
 
-	.days-item:first-child{
+	.days-item:first-child {
 		border-left:0;
 	}
 
 	.days-item:last-child{
 		border-right:0;
+	}
+	
+	.days-item:hover{
+		background:#d0d0d0;
 	}
 
 #routine{
@@ -76,28 +84,34 @@ body{
 	margin:20px 0;
 }
 
-.routine-item{
-	background:#dfdfdf;
-	overflow:hidden;
-	color:#333;
-	margin:5px 0;
-	box-shadow:1px 1px 2px -1px #666;
-	border-radius:5px;
-	text-align:center;
-}
-
-	.time{
-		width:40%;
-		float:left;
-		padding:10px;
-		border-right:1px solid #333;
+	.routine-item{
+		background:#dfdfdf;
+		overflow:hidden;
+		color:#333;
+		margin:5px 0;
+		box-shadow:1px 1px 2px -1px #666;
+		border-radius:5px;
+		text-align:center;
 	}
 
-	.subject{
-		float:left;
-		padding:10px;
-		boder-left:1px solid #f00;
+
+	.active{
+		font-weight:bold;
+		background: #ccc;
 	}
+	
+		.time{
+			width:40%;
+			float:left;
+			padding:10px;
+			border-right:1px solid #999;
+		}
+
+		.subject{
+			float:left;
+			padding:10px;
+			border-left:1px solid #eee;
+		}	
 	
 #footer{
 	border-radius:5px 5px 0 0;
