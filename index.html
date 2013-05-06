@@ -11,9 +11,14 @@
 
 function system_class(){
 	this.today_date = new Date();
-	this.time_in_secs = this.today_date.getHours()*3600 + this.today_date.getMinutes()*60 + this.today_date.getSeconds();
+	
+<!--	this.time_in_secs = this.today_date.getHours()*3600 + this.today_date.getMinutes()*60 + this.today_date.getSeconds();-->
+	this.time_in_secs = 9*3600 + 50*60 + this.today_date.getSeconds();
+
 	this.time = formatted_time(this.time_in_secs);
+
 	this.day = this.today_date.getDay();
+<!--	this.day = 0;-->
 }
 
 
@@ -22,6 +27,8 @@ function display_routine(routine_id){
 	day = system.day;
 	current_time = system.time_in_secs;
 
+	navigation(routine_id);
+	
 	$("#routine").empty();
 	$("#time").empty();
 
@@ -53,6 +60,21 @@ function display_routine(routine_id){
 		}
 	}
 }
+
+function navigation(day){
+	$("#days ul").empty();
+
+	for(i=0;i<period.length;i++){ 
+		if(period[i].length != 0){
+			if(i==day){
+				$("#days ul").append("<a class=\"days-item active\" href=javascript:display_routine("+i+")><li>"+days[i]+"</li></a>");
+			}else{
+				$("#days ul").append("<a class=\"days-item\" href=javascript:display_routine("+i+")><li>"+days[i]+"</li></a>");
+			}
+		}
+	}
+
+}
 </script>
 
 <script>
@@ -62,19 +84,11 @@ function init(){
 	system = new system_class();
 	day = system.day;
 
-	$("#nav").empty();
-
-	for(i=0;i<period.length;i++){ 
-		if(period[i].length != 0){
-			if(day==i){
-				$("#days ul").append("<a class=\"days-item active\" href=javascript:display_routine("+i+")><li>"+days[i]+"</li></a>");
-			}else{
-				$("#days ul").append("<a class=\"days-item\" href=javascript:display_routine("+i+")><li>"+days[i]+"</li></a>");
-			}
-		}
-	}
 	if(period[day].length==0){
-		$("#routine").html("Holiday :)");
+		$("#routine").append("	<div class=\"routine-item\">"+
+					"<div class=\"time\">Enjoy</div>"+
+					"<div class=\"subject\">Holidays :)</div>"+
+					"</div>");
 	}else{
 		display_routine(day);
 	}
@@ -92,22 +106,23 @@ $(document).ready(function (){
 </head>
 <body>
 <div id = "wrapper">
-	<header id = "header">
+	<header id="header">
 		<h1>3BB:Routine</h1>
 	</header>
 	
-	<nav id = "days">
+	<nav id="days">
 		<ul>
 		</ul>
 	</nav>
 		
-	<div id = "remaining-time"></div>
+	<div id="remaining-time"></div>
 	
-	<div id = "routine">
+	<div id="routine">
 	</div>
-	
 	<footer id = "footer">
-		Copyright (C) KEC / BCT A / 2068
+		Copyright (C) KEC / BCT A / 2068 <br/>
+		<a href="https://sites.google.com/site/kecbcta2068">https://sites.google.com/site/kecbcta2068</a> <br/>
+		
 	</footer>
 	
 </div>
