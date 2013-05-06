@@ -2,7 +2,7 @@
 
 <widget xmlns     = "http://www.w3.org/ns/widgets"
 	xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.kecbcta2068"
+        id        = "com.kecbcta2068.3bb"
         version   = "1.0.0">
 
 
@@ -14,6 +14,11 @@
 
     <author href="https://sites.google.com/site/kecbcta2068/" email="kecbcta2068@gmail.com">
        KEC / BCT A / 2068
+	Ashmita (github.com/mishraashmita94)
+	Ayush	(github.com/iusmaharjan)
+	Deepak	(github.com/deepsadhi)
+	Kshitiz	(github.com/kshitiztiwari)
+	Manisha	(github.com/manisa)
     </author>
 
     <feature name="http://api.phonegap.com/1.0/device" />
