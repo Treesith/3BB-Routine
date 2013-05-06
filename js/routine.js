@@ -93,5 +93,5 @@ period[5][4] = new period_class("Break", 10,35,12,15);
 period[5][5] = new period_class("DSA Lab", 12,15,2,45);
 period[5][6] = new period_class("Microprocessor", 2,45,4,25);
 
-//routine for saturday();
+//routine for saturday
 period [0] = new Array();
