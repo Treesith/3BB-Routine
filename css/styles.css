@@ -117,3 +117,15 @@ body{
 #footer{
 	border-radius:5px 5px 0 0;
 }
+
+	#copyright{
+		display:block;
+	}
+	
+	#site a{
+		color:#efefef;
+	}
+	
+	#site:hover{
+		text-decoration:underline;
+	}
