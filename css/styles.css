@@ -11,8 +11,9 @@ body,a, h1, ul,li{
 }
 
 body{
-	font-family:Arial, Helvetica;
-	background:#e5e5e5;
+	font-family:Lato ,Arial, Helvetica;
+	background:url(../images/bg.png) #e5e5e5;
+	padding:0 10px;
 }
 
 #wrapper{
@@ -22,44 +23,67 @@ body{
 }
 
 #header{
+	color: #EFEFEF;
 	width:100%;
-}
-
-#days{
-	overflow:hidden;
-	margin:20px 0;
-}
-
-.days-item{
-	width:16.66%;
-	float:left;
-	list-style:none;
+	padding:20px;
+	background: rgba(20, 10, 0, .3);
+	text-shadow:1px 1px #666;
+	border-radius: 0 0 5px 5px;
+	box-shadow:1px 2px 3px -1px #666;
 }
 
 #remaining-time{
 	color:#fff;
-	background:#ccc;
+	margin: 10px 0 0;
+	padding: 0 20px;
 	position:relative;
+	color: #333;
+	font-size: 16px;
 }
+
+#days{
+	overflow:hidden;
+	margin:10px 0;
+	background: #ccc;
+	border-radius:5px;
+	box-shadow:1px 2px 3px -1px #666;
+}
+
+
+
+	.days-item{
+		width:16.66%;
+		float:left;
+		list-style:none;
+		color:#333;
+		border-left:1px solid #666;
+		border-right:1px solid #efefef ;
+		padding: 20px;
+		text-align: center;
+	}
+
+	.days-item:first-child{
+		border-left:0;
+	}
+
+	.days-item:last-child{
+		border-right:0;
+	}
 
 #routine{
 	position:relative;
+	letter-spacing:1px;
+	background:#ccc;
+	overflow:hidden;
 }
 
-.time{
-	width:25%;
-	float:left;
-	padding:20px;
-}
+	.time{
+		width:40%;
+		float:left;
+		padding:20px;
+	}
 
-.subject{
-	float:left;
-	padding:20px;
-}
-
-
-
-	
-	
-	
-	
+	.subject{
+		float:left;
+		padding:20px;
+	}
