@@ -7,6 +7,9 @@
 <script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width">
+<!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
 <script>
 
 function system_class(){
@@ -111,18 +114,21 @@ $(document).ready(function (){
 	</header>
 	
 	<nav id="days">
-		<ul>
-		</ul>
+		<ul></ul>
 	</nav>
 		
 	<div id="remaining-time"></div>
 	
-	<div id="routine">
-	</div>
+	<div id="routine"></div>
+	
+	<input type="button" value="Reset" onclick="init()"/> 
+	
 	<footer id ="footer">
 		<div id="copyright">Copyright (C) KEC / BCT A / 2068</div>
 		<div id="site"><a href="https://sites.google.com/site/kecbcta2068">https://sites.google.com/site/kecbcta2068</a></div>
 	</footer>
+	
+	
 	
 </div>
 </body>

@@ -113,6 +113,19 @@ body{
 			padding:10px;
 			border-left:1px solid #eee;
 		}	
+		
+input[type="button"]{
+	background: #DFDFDF;
+	border:1px solid #333;
+	margin:0 0 20px;
+	padding:5px;
+	border-radius:5px;
+	color:#333;
+}
+
+input[type="button"]:hover{
+	background:#D0D0D0;
+}
 	
 #footer{
 	border-radius:5px 5px 0 0;
