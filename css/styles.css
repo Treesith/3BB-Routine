@@ -44,7 +44,7 @@ body{
 #days{
 	overflow:hidden;
 	margin:10px 0;
-	background: #ccc;
+	background:rgba(200,200,200, .8);
 	border-radius:5px;
 	box-shadow:1px 2px 3px -1px #666;
 }
@@ -73,17 +73,25 @@ body{
 #routine{
 	position:relative;
 	letter-spacing:1px;
-	background:#ccc;
-	overflow:hidden;
+	color: #333;
 }
 
-	.time{
-		width:40%;
-		float:left;
-		padding:20px;
+	.routine-item{
+		background:rgba(0, 0, 0, .3);
+		overflow:hidden;
+		margin:10px 0;
 	}
 
-	.subject{
-		float:left;
-		padding:20px;
-	}
+		.time{
+			width:40%;
+			float:left;
+			border-right:1px solid #fff;
+			padding:10px;
+		}
+
+		.subject{
+			float:left;
+			border-left:1px solid #333;
+			padding:10px;
+		}
+	
