@@ -2,6 +2,7 @@
 <html lang = "en">
 <head>
 <title>3BB:Routine</title>
+<link rel="shortcut icon" href="images/favicon.ico">
 <link rel = "stylesheet" type ="text/css" href = "css/styles.css" />
 <script type="text/javascript" src="js/routine.js"></script>
 <script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
@@ -12,8 +13,8 @@
 function system_class(){
 	this.today_date = new Date();
 	
-<!--	this.time_in_secs = this.today_date.getHours()*3600 + this.today_date.getMinutes()*60 + this.today_date.getSeconds();-->
-	this.time_in_secs = 9*3600 + 50*60 + this.today_date.getSeconds();
+	this.time_in_secs = this.today_date.getHours()*3600 + this.today_date.getMinutes()*60 + this.today_date.getSeconds();
+<!--	this.time_in_secs = 9*3600 + 50*60 + this.today_date.getSeconds();-->
 
 	this.time = formatted_time(this.time_in_secs);
 
@@ -84,8 +85,10 @@ function init(){
 	system = new system_class();
 	day = system.day;
 
+	navigation(day);
+	
 	if(period[day].length==0){
-		$("#routine").append("	<div class=\"routine-item\">"+
+		$("#routine").html("	<div class=\"routine-item\">"+
 					"<div class=\"time\">Enjoy</div>"+
 					"<div class=\"subject\">Holidays :)</div>"+
 					"</div>");
@@ -120,8 +123,8 @@ $(document).ready(function (){
 	<div id="routine">
 	</div>
 	<footer id = "footer">
-		Copyright (C) KEC / BCT A / 2068 <br/>
-		<a href="https://sites.google.com/site/kecbcta2068">https://sites.google.com/site/kecbcta2068</a> <br/>
+		<div id="copyright">Copyright (C) KEC / BCT A / 2068</div>
+		<div id="site"><a href="https://sites.google.com/site/kecbcta2068">https://sites.google.com/site/kecbcta2068</a></div>
 		
 	</footer>
 	
