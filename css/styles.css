@@ -39,12 +39,13 @@ body{
 }
 
 #remaining-time{
-	color:#fff;
-	margin: 10px 0 0;
+	margin: 20px 0 0;
 	padding: 0 20px;
 	position:relative;
 	color: #333;
-	font-size: 16px;
+	font-size: 20px;
+	text-shadow:1px 1px #fff;
+	font-weight:bold;
 }
 
 #days{
@@ -97,7 +98,7 @@ body{
 
 	.active{
 		font-weight:bold;
-		background: #ccc;
+		background: #c0c0c0;
 	}
 	
 		.time{
