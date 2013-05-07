@@ -29,7 +29,7 @@ body{
 }
 
 #wrapper{
-	width:960px;
+	width:740px;
 	max-width:100%;
 	margin:0 auto;
 }
@@ -81,7 +81,7 @@ body{
 		color:#333;
 		border-left:1px solid #999;
 		border-right:1px solid #eee;
-		padding: 20px;
+		padding: 20px 0;
 		text-align: center;
 	}
 
