@@ -8,7 +8,7 @@ VERSION :
 
 URL :
 ---- 
-	"https://sites.google.com/site/kecbcta2068/"
+	https://sites.google.com/site/kecbcta2068/
 	 
 CONTACT : 
 --------
