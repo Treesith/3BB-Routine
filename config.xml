@@ -2,14 +2,14 @@
 
 <widget xmlns     = "http://www.w3.org/ns/widgets"
 	xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.kecbcta2068.routine"
+        id        = "com.kecbcta2068.app"
         version   = "1.0.0">
 
 
-    <name>KECBCTA</name>
+    <name>KEC / BCT / A / 2068</name>
 
     <description>
-        App for routine of KEC/BCTA/2068
+        App for KEC / BCT A / 2068
     </description>
 
     <author href="https://sites.google.com/site/kecbcta2068/" email="kecbcta2068@gmail.com">
