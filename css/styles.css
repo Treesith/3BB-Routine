@@ -17,6 +17,9 @@ a, a:visited{
 	border:0;
 }
 
+img{
+	max-width:100%;
+}
 
 body{
 	font-family:Lato ,Arial, Helvetica;
@@ -189,5 +192,9 @@ input[type="button"]:hover{
 			padding:10px;
 			border-top:1px solid #eee;
 			background:#cfcfcf;
-	}	
+	}
+	
+	#footer-right{
+		float:none;
+	}
 }
