@@ -12,26 +12,13 @@
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
-<style>
-.routine-item{
-}
-.over{
-	background:url("images/check.png");
-	background-color:#d0e8b4;
-	background-repeat:no-repeat;
-	background-position:1.2% 50%;
-}
-</style>
-
 <script>
 
 function system_class(){
 	this.today_date = new Date();
 	this.time_in_secs = this.today_date.getHours()*3600 + this.today_date.getMinutes()*60 + this.today_date.getSeconds();
-	this.time_in_secs = 12*3600 + 40*60 + this.today_date.getSeconds();
 	this.time = formatted_time(this.time_in_secs);
 	this.day = this.today_date.getDay();
-	this.day = 1;
 }
 
 
@@ -41,7 +28,7 @@ function display_routine(routine_id){
 	current_time = system.time_in_secs;
 
 	navigation(routine_id);
-
+	
 	$("#routine").empty();
 	$("#time").empty();
 
@@ -51,7 +38,7 @@ function display_routine(routine_id){
 		period_end_time = period[day][j].end_time_in_secs();
 
 		if(current_time>period_start_time && current_time<=period_end_time){
-			$("#remaining-time").html(period[day][j].subject + "-> " +formatted_time(period_end_time-current_time).replace(/:/g, " : ")+" left" );
+			$("#remaining-time").html(formatted_time(period_end_time-current_time).replace(/:/g, " : "));
 		}
 	}
 
@@ -59,15 +46,17 @@ function display_routine(routine_id){
 		period_start_time = period[routine_id][j].start_time_in_secs();
 		period_end_time = period[routine_id][j].end_time_in_secs();
 
-		$("#routine").append(	"<div id=\"row"+j+"\" class=\"routine-item\">"+
-					"<div class=\"time\">"+period[routine_id][j].time()+"</div>"+
-					"<div class=\"subject\">"+period[routine_id][j].subject+"</div>"+
-					"</div>");
-
 		if((day == routine_id) && (current_time>period_start_time && current_time<=period_end_time)){
-			$("#row"+j).addClass("routine-item active");
-		}else if((day == routine_id) && (current_time>=period_start_time && current_time>=period_end_time)){
-			$("#row"+j).addClass("routine-item over");
+			$("#routine").append("	<div class=\"routine-item active\">"+
+						"<div class=\"time\">"+period[routine_id][j].time()+"</div>"+
+						"<div class=\"subject\">"+period[routine_id][j].subject+"</div>"+
+						"</div>");
+		}else{
+		
+			$("#routine").append("	<div class=\"routine-item\">"+
+						"<div class=\"time\">"+period[routine_id][j].time()+"</div>"+
+						"<div class=\"subject\">"+period[routine_id][j].subject+"</div>"+
+						"</div>");
 		}
 	}
 }
@@ -96,7 +85,7 @@ function init(){
 	day = system.day;
 
 	navigation(day);
-
+	
 	if(period[day].length==0){
 		$("#routine").html("	<div class=\"routine-item\">"+
 					"<div class=\"time\">Enjoy</div>"+
@@ -114,8 +103,6 @@ $(document).ready(function (){
 
 </script>
 
-
-
 </head>
 <body>
 <div id ="wrapper">
@@ -123,25 +110,25 @@ $(document).ready(function (){
 		<div id="heading"><h1>3BB:Routine</h1></div>
 		<a href="javascript:init()"><img id="reload" src="images/spin.png" alt="Reload"/></a>
 	</header>
-
+	
 	<nav id="days">
 		<ul></ul>
 	</nav>
-
+		
 	<div id="remaining-time"></div>
-
+	
 	<div id="routine"></div>
-
+	
 	<footer id ="footer">
 		<div id="footer-left">
-			<div id="version">Version 1.0.1</div>
+			<div id="version">Version 1.0.0</div>
 			<div id="site"><a href="https://sites.google.com/site/kecbcta2068/bct-a" target="_blank">Check for Updates</a></div>
 		</div>
 		<div id="footer-right">
 			<div id="copyright">Copyright (C) KEC / BCT A / 2068</div>
-			</div>
+		</div>
 	</footer>
-
+	
 </div>
 </body>
 </html>
