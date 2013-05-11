@@ -64,7 +64,7 @@ period[2][1] = new period_class("NM(JS)", 8,55,10,35);
 period[2][2] = new period_class("Break", 10,35,11,25);
 period[2][3] = new period_class("Maths(RKS)", 11,25,12,15);
 period[2][4] = new period_class("DSA Lab", 12,15,14,45);
-period[2][5] = new period_class("Microprocessor(BRK)", 14,45,16,25);
+period[2][5] = new period_class("DSA(SK)", 14,45,16,25);
 
 //routine for wednesday
 period[3] = new Array();
@@ -88,10 +88,9 @@ period [5] = new Array();
 period[5][0] = new period_class("Test", 7,15,8,5);
 period[5][1] = new period_class("Maths(JS)", 8,5,8,55);
 period[5][2] = new period_class("Maths(SKM)", 8,55,9,45);
-period[5][3] = new period_class("Maths(HDC)", 9,45,10,35);
-period[5][4] = new period_class("Break", 10,35,12,15);
-period[5][5] = new period_class("DSA Lab", 12,15,14,45);
-period[5][6] = new period_class("Microprocessor(BRR)", 14,45,16,25);
+period[5][3] = new period_class("Break", 9,45,11,25);
+period[5][4] = new period_class("Microprocessor(BRK)", 11,25,13,5);
+period[5][5] = new period_class("DSA Lab", 13,5,15,35);
 
 //routine for saturday
 period [6] = new Array();

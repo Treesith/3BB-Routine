@@ -12,13 +12,26 @@
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
+<style>
+.routine-item{
+}
+.over{
+	background:url("images/check.png");
+	background-color:#d0e8b4;
+	background-repeat:no-repeat;
+	background-position:1.2% 50%;
+}
+</style>
+
 <script>
 
 function system_class(){
 	this.today_date = new Date();
 	this.time_in_secs = this.today_date.getHours()*3600 + this.today_date.getMinutes()*60 + this.today_date.getSeconds();
+	this.time_in_secs = 12*3600 + 40*60 + this.today_date.getSeconds();
 	this.time = formatted_time(this.time_in_secs);
 	this.day = this.today_date.getDay();
+	this.day = 1;
 }
 
 
@@ -38,7 +51,7 @@ function display_routine(routine_id){
 		period_end_time = period[day][j].end_time_in_secs();
 
 		if(current_time>period_start_time && current_time<=period_end_time){
-			$("#remaining-time").html(formatted_time(period_end_time-current_time).replace(/:/g, " : "));
+			$("#remaining-time").html(period[day][j].subject + "-> " +formatted_time(period_end_time-current_time).replace(/:/g, " : ")+" left" );
 		}
 	}
 
@@ -46,17 +59,15 @@ function display_routine(routine_id){
 		period_start_time = period[routine_id][j].start_time_in_secs();
 		period_end_time = period[routine_id][j].end_time_in_secs();
 
+		$("#routine").append(	"<div id=\"row"+j+"\" class=\"routine-item\">"+
+					"<div class=\"time\">"+period[routine_id][j].time()+"</div>"+
+					"<div class=\"subject\">"+period[routine_id][j].subject+"</div>"+
+					"</div>");
+
 		if((day == routine_id) && (current_time>period_start_time && current_time<=period_end_time)){
-			$("#routine").append("	<div class=\"routine-item active\">"+
-						"<div class=\"time\">"+period[routine_id][j].time()+"</div>"+
-						"<div class=\"subject\">"+period[routine_id][j].subject+"</div>"+
-						"</div>");
-		}else{
-		
-			$("#routine").append("	<div class=\"routine-item\">"+
-						"<div class=\"time\">"+period[routine_id][j].time()+"</div>"+
-						"<div class=\"subject\">"+period[routine_id][j].subject+"</div>"+
-						"</div>");
+			$("#row"+j).addClass("routine-item active");
+		}else if((day == routine_id) && (current_time>=period_start_time && current_time>=period_end_time)){
+			$("#row"+j).addClass("routine-item over");
 		}
 	}
 }
