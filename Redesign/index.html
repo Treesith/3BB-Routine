@@ -40,7 +40,7 @@ function display_routine(routine_id){
 		period_end_time = period[day][j].end_time_in_secs();
 
 		if(current_time>period_start_time && current_time<=period_end_time){
-			$("#remaining-time").html(period[day][j].subject + "-> " +formatted_time(period_end_time-current_time).replace(/:/g, " : ")+" left" );
+			$("#remaining-time").html(period[day][j].subject + " " +formatted_time(period_end_time-current_time).replace(/:/g, " : ")+" left" );
 		}
 	}
 
@@ -73,7 +73,6 @@ function navigation(day){
 			}
 		}
 	}
-
 }
 </script>
 
@@ -103,7 +102,54 @@ $(document).ready(function (){
 
 </script>
 
+<script type = "text/javascript">
+$(document).ready(function(){
+	var myHeader = $('#days');
+	var article = $('article');
+	var remaining_time = $('#remaining-time');
+	
+	var days_height = $('#days').height()+ 2;
+	
+myHeader.data( 'position', myHeader.position() );
+	$(window).scroll(function(){
+		var hPos = myHeader.data('position'), scroll = getScroll();
+		if ( hPos.top < scroll.top){
+			myHeader.addClass('fixed');
+			article.css({top : days_height});
+		}
+		else {
+			myHeader.removeClass('fixed');
+			article.css({top : 0});
+		}
+	});
+});
+function getScroll () {
+    var b = document.body;
+    var e = document.documentElement;
+    return {
+        left: parseFloat( window.pageXOffset || b.scrollLeft || e.scrollLeft ),
+        top: parseFloat( window.pageYOffset || b.scrollTop || e.scrollTop )
+    };
+}
+</script>
+<style>
+.fixed{
+	position:fixed;
+	width:740px;
+	max-width:100%;
+	z-index:100;
+	top:0;
+	box-shadow:0 1px 2px #666;
+	border-bottom:0 !important;
+	overflow:hidden;
+}
 
+article{
+	position:relative;
+}
+
+
+</style>
 
 </head>
 <body>
@@ -117,10 +163,11 @@ $(document).ready(function (){
 		<ul></ul>
 	</nav>
 
-	<div id="remaining-time"></div>
-
-	<div id="routine"></div>
-
+	<article>
+		<div id="remaining-time"></div>
+		<div id="routine"></div>
+	</article>
+	
 	<footer id ="footer">
 		<div id="footer-left">
 			<div id="version">Version 1.0.1</div>
