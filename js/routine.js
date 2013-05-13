@@ -4,6 +4,7 @@ function formatted_time(secs){
 	mins = parseInt(secs / 60);
 	secs = secs % 60;
 	
+	hrs = hrs > 12 ? hrs-12 : hrs;
 	hrs = ''+hrs;
 	mins = ''+mins;
 	secs = ''+secs;

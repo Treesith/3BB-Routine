@@ -17,10 +17,8 @@
 function system_class(){
 	this.today_date = new Date();
 	this.time_in_secs = this.today_date.getHours()*3600 + this.today_date.getMinutes()*60 + this.today_date.getSeconds();
-	this.time_in_secs = 12*3600 + 40*60 + this.today_date.getSeconds();
 	this.time = formatted_time(this.time_in_secs);
 	this.day = this.today_date.getDay();
-	this.day = 1;
 }
 
 
