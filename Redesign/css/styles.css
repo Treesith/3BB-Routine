@@ -160,7 +160,9 @@ body{
 		}
 		
 		.over{
-			background:url("../images/check.png") no-repeat scroll 96.2% 50% #D0E8B4;
+			background-image:url("../images/check.png");
+			background-position:96.2% 50%;
+			background-repeat:no-repeat;
 		}
 		
 input[type="button"]{
@@ -233,6 +235,6 @@ input[type="button"]:hover{
 	}
 	
 	.over{
-		background:url("../images/check.png") no-repeat 96.2% 10% #D0E8B4;
+		background-position:96.2% 10%;
 	}
 }
