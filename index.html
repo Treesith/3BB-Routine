@@ -30,17 +30,7 @@ function display_routine(routine_id){
 	navigation(routine_id);
 
 	$("#routine").empty();
-	$("#time").empty();
 
-
-	for(j=0;j<period[day].length;j++){
-		period_start_time = period[day][j].start_time_in_secs();
-		period_end_time = period[day][j].end_time_in_secs();
-
-		if(current_time>period_start_time && current_time<=period_end_time){
-			$("#remaining-time").html(period[day][j].subject + "-> " +formatted_time(period_end_time-current_time).replace(/:/g, " : ")+" left" );
-		}
-	}
 
 	for(j=0;j<period[routine_id].length;j++){
 		period_start_time = period[routine_id][j].start_time_in_secs();
@@ -73,10 +63,39 @@ function navigation(day){
 	}
 
 }
+
+function timer(){
+	system = new system_class();
+	day = system.day;
+	current_time = system.time_in_secs;
+
+	last_period_id = period[day].length-1;
+
+	class_start_time = period[day][0].start_time_in_secs();
+	class_end_time = period[day][last_period_id].end_time_in_secs();
+	
+	$("#remaining-time").empty();
+
+	if((period[day].length!=0) && (current_time>class_start_time && current_time<=class_end_time)) {
+
+		for(j=0;j<period[day].length;j++){
+			period_start_time = period[day][j].start_time_in_secs();
+			period_end_time = period[day][j].end_time_in_secs();
+
+			if(current_time>period_start_time && current_time<=period_end_time){
+				$("#remaining-time").html(period[day][j].subject + "-> " +formatted_time(period_end_time-current_time).replace(/:/g, " : ")+" left" );
+				break;
+			}
+		}
+
+	}
+	init();
+}
+
 </script>
 
 <script>
-days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 function init(){
 	system = new system_class();
@@ -97,6 +116,11 @@ function init(){
 
 $(document).ready(function (){
 	init();
+	var clock=setInterval(
+		function(){
+			timer()
+		},1000);
+
 });
 
 </script>
