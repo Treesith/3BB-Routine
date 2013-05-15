@@ -74,22 +74,27 @@ function timer(){
 	class_start_time = period[day][0].start_time_in_secs();
 	class_end_time = period[day][last_period_id].end_time_in_secs();
 	
-	$("#remaining-time").empty();
 
-	if((period[day].length!=0) && (current_time>class_start_time && current_time<=class_end_time)) {
+	if((period[day].length!=0) && (current_time>class_start_time && current_time<=class_end_time+2)) {
 
 		for(j=0;j<period[day].length;j++){
 			period_start_time = period[day][j].start_time_in_secs();
 			period_end_time = period[day][j].end_time_in_secs();
 
 			if(current_time>period_start_time && current_time<=period_end_time){
+				timer.period_id_now = j || -1;
 				$("#remaining-time").html(period[day][j].subject + "-> " +formatted_time(period_end_time-current_time).replace(/:/g, " : ")+" left" );
 				break;
 			}
 		}
+		if(timer.period_id_now != timer.period_id_prev || current_time >= class_end_time){
+			timer.period_id_prev = timer.period_id_now || -2;
+			init();
+			$("#remaining-time").empty();
+			alert("->");
+		}
 
 	}
-	init();
 }
 
 </script>
@@ -112,6 +117,7 @@ function init(){
 		display_routine(day);
 	}
 }
+
 
 
 $(document).ready(function (){
