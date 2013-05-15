@@ -40,7 +40,7 @@ function display_routine(routine_id){
 		period_end_time = period[day][j].end_time_in_secs();
 
 		if(current_time>period_start_time && current_time<=period_end_time){
-			$("#remaining-time").html(period[day][j].subject + " " +formatted_time(period_end_time-current_time).replace(/:/g, " : ")+" left" );
+			$("#remaining-time").html(period[day][j].subject + " : " +formatted_time(period_end_time-current_time).replace(/:/g, " : ")+" left" );
 		}
 	}
 
@@ -108,18 +108,19 @@ $(document).ready(function(){
 	var article = $('article');
 	var remaining_time = $('#remaining-time');
 	
-	var days_height = $('#days').height()+ 2;
+	var days_height = $('#days').height()+ 2 + 10;
 	
 myHeader.data( 'position', myHeader.position() );
 	$(window).scroll(function(){
 		var hPos = myHeader.data('position'), scroll = getScroll();
 		if ( hPos.top < scroll.top){
 			myHeader.addClass('fixed');
-			article.css({top : days_height});
+			article.css({marginTop : days_height});
 		}
+
 		else {
 			myHeader.removeClass('fixed');
-			article.css({top : 0});
+			article.css({marginTop : 0});
 		}
 	});
 });
@@ -145,10 +146,7 @@ function getScroll () {
 }
 
 article{
-	position:relative;
 }
-
-
 </style>
 
 </head>
@@ -159,14 +157,15 @@ article{
 		<a href="javascript:init()"><img id="reload" src="images/spin.png" alt="Reload"/></a>
 	</header>
 
+	
 	<nav id="days">
 		<ul></ul>
 	</nav>
-
+	
 	<article>
 		<div id="remaining-time"></div>
 		<div id="routine"></div>
-	</article>
+	<article>
 	
 	<footer id ="footer">
 		<div id="footer-left">
