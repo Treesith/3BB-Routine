@@ -7,7 +7,7 @@
 <script type="text/javascript" src="js/routine.js"></script>
 <script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width; initial-scale=1">
 <!--[if IE]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
@@ -36,8 +36,8 @@ function display_routine(routine_id){
 
 
 	for(j=0;j<period[day].length;j++){
-		period_start_time = period[day][j].start_time_in_secs();
-		period_end_time = period[day][j].end_time_in_secs();
+		var period_start_time = period[day][j].start_time_in_secs();
+		var period_end_time = period[day][j].end_time_in_secs();
 
 		if(current_time>period_start_time && current_time<=period_end_time){
 			$("#remaining-time").html(period[day][j].subject + " : " +formatted_time(period_end_time-current_time).replace(/:/g, " : ")+" left" );
@@ -104,23 +104,23 @@ $(document).ready(function (){
 
 <script type = "text/javascript">
 $(document).ready(function(){
-	var myHeader = $('#days');
-	var article = $('article');
+	var nav = $('#nav-items');
+	var routine = $('#routine');
 	var remaining_time = $('#remaining-time');
 	
-	var days_height = $('#days').height()+ 2 + 10;
+	var days_height = nav.height();
 	
-myHeader.data( 'position', myHeader.position() );
+	routine.css({marginTop:days_height+10});
+	
+	nav.data('position', nav.position());
 	$(window).scroll(function(){
-		var hPos = myHeader.data('position'), scroll = getScroll();
+		var hPos = nav.data('position'), scroll = getScroll();
 		if ( hPos.top < scroll.top){
-			myHeader.addClass('fixed');
-			article.css({marginTop : days_height});
+			nav.addClass('fixed');
 		}
 
 		else {
-			myHeader.removeClass('fixed');
-			article.css({marginTop : 0});
+			nav.removeClass('fixed');
 		}
 	});
 });
@@ -132,20 +132,25 @@ function getScroll () {
         top: parseFloat( window.pageYOffset || b.scrollTop || e.scrollTop )
     };
 }
+
+
 </script>
 <style>
 .fixed{
-	position:fixed;
+	position:fixed !important;
 	width:740px;
 	max-width:100%;
 	z-index:100;
 	top:0;
 	box-shadow:0 1px 2px #666;
-	border-bottom:0 !important;
 	overflow:hidden;
 }
 
-article{
+#nav-items{
+	position:absolute;
+	z-index:100;
+	width:740px;
+	max-width:100%;
 }
 </style>
 
@@ -153,19 +158,18 @@ article{
 <body>
 <div id ="wrapper">
 	<header id="header">
-		<div id="heading"><h1>3BB:Routine</h1></div>
+		<div id="heading"><h1 id="title">3BB:Routine</h1></div>
 		<a href="javascript:init()"><img id="reload" src="images/spin.png" alt="Reload"/></a>
 	</header>
 
-	
-	<nav id="days">
-		<ul></ul>
-	</nav>
-	
-	<article>
+	<div id="nav-items">
+		<nav id="days">
+			<ul></ul>
+		</nav>
 		<div id="remaining-time"></div>
-		<div id="routine"></div>
-	<article>
+	</div>
+	
+	<div id="routine"></div>
 	
 	<footer id ="footer">
 		<div id="footer-left">
@@ -176,6 +180,7 @@ article{
 			<div id="copyright">Copyright (C) KEC / BCT A / 2068</div>
 			</div>
 	</footer>
+	
 
 </div>
 </body>

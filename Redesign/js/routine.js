@@ -1,7 +1,7 @@
 function formatted_time(secs){
-	hrs = parseInt(secs / 3600);
+	var hrs = parseInt(secs / 3600);
 	secs = secs - hrs*3600;
-	mins = parseInt(secs / 60);
+	var mins = parseInt(secs / 60);
 	secs = secs % 60;
 	
 	hrs = ''+hrs;
@@ -28,8 +28,8 @@ function period_class(subject, start_hrs, start_mins, end_hrs, end_mins)
 	this.end_time_in_secs=end_time_in_secs;
 
 	function time(){
-		s_time = formatted_time(this.start_hrs*3600+this.start_mins*60);
-		e_time = formatted_time(this.end_hrs*3600+this.end_mins*60);
+		var s_time = formatted_time(this.start_hrs*3600+this.start_mins*60);
+		var e_time = formatted_time(this.end_hrs*3600+this.end_mins*60);
 		return s_time.substr(0,5) + '  -  ' + e_time.substr(0,5);
 	}
 
@@ -43,7 +43,7 @@ function period_class(subject, start_hrs, start_mins, end_hrs, end_mins)
 }
 
 //creating a period array for a week
-period = new Array();
+var period = new Array();
 
 //routine for sunday
 period[0] = new Array();
