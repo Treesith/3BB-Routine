@@ -92,7 +92,7 @@ period[5][1] = new period_class("Maths(JS)", 8,5,8,55);
 period[5][2] = new period_class("Maths(SKM)", 8,55,9,45);
 period[5][3] = new period_class("Maths(VDS)", 9,45,10,35);
 period[5][4] = new period_class("Break", 10,35,11,25);
-period[5][5] = new period_class("Discrete Structure(AS), 11,25,12,15);
+period[5][5] = new period_class("Discrete Structure(AS)", 11,25,12,15);
 period[5][6] = new period_class("Microprocessor(BRK)", 12,15,13,55);
 period[5][7] = new period_class("DSA Lab", 13,55,16,25);
 
