@@ -4,7 +4,13 @@
 
 VERSION :
 -------- 
-	"1.0.0"
+	"1.1.0"
+
+
+CHANGES :
+--------
+	Routine changed
+	Timer added
 
 URL :
 ---- 
