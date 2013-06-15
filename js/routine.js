@@ -78,11 +78,12 @@ period[3][5] = new period_class("Machine(DS)", 13,55,15,35);
 
 //routine for thursday
 period[4] = new Array();
-period[4][0] = new period_class("NM(KT)", 7,15,8,55);
+period[4][0] = new period_class("Microprocessor(SL)", 7,15,8,55);
 period[4][1] = new period_class("Break", 8,55,9,45);
 period[4][2] = new period_class("NM / Microprocessor Lab", 9,45,12,15);
-period[4][3] = new period_class("Discrete Structure(AS)",12,15,13,55);
-period[4][4] = new period_class("Instrumentation(BRR)", 13,55,15,35);
+period[4][3] = new period_class("Discrete Structure(AS)", 12,15,13,5);
+period[4][4] = new period_class("NM(KT)", 13,5,14,45);
+period[4][5] = new period_class("Instrumentation(BRR)", 14,45,16,25);
 
 //routine for friday
 period[5] = new Array();
@@ -91,8 +92,9 @@ period[5][1] = new period_class("Maths(JS)", 8,5,8,55);
 period[5][2] = new period_class("Maths(SKM)", 8,55,9,45);
 period[5][3] = new period_class("Maths(VDS)", 9,45,10,35);
 period[5][4] = new period_class("Break", 10,35,11,25);
-period[5][5] = new period_class("Microprocessor(BRK)", 11,25,13,5);
-period[5][6] = new period_class("DSA Lab", 13,5,15,35);
+period[5][5] = new period_class("Discrete Structure(AS)", 11,25,12,15);
+period[5][6] = new period_class("Microprocessor(BRK)", 12,15,13,55);
+period[5][7] = new period_class("DSA Lab", 13,55,16,25);
 
 //routine for saturday
 period [6] = new Array();
